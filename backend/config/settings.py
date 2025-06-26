@@ -49,8 +49,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -133,3 +134,18 @@ AUTH_USER_MODEL = 'core.User'
 
 # Redireciona para a home page após o login
 LOGIN_REDIRECT_URL = '/'
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000", # endereço padrão do React que foi colocado antes
+    "http://localhost:8001", # servidor de front-end com HTML/JS
+    "http://127.0.0.1:8001", ] # esse é por segurança pq às vezes o navegador usa um ou outro
+
+
+# Configurações do Django REST Framework
+REST_FRAMEWORK = {
+    # Define as classes de autenticação padrão pra todas as Views da API
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}

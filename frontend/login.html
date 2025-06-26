@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Massoterapia</title>
+    </head>
+<body>
+    <h1>Login</h1>
+    <p>Use os dados de um usuário que você já criou no painel de admin.</p>
+
+    <form id="login-form">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div id="error-message" style="color: red; margin-top: 1em;"></div>
+
+    <script src="login.js"></script>
+</body>
+</html>

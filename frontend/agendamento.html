@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Agendamento</title>
+</head>
+<body>
+    <h1>Faça seu Agendamento</h1>
+    <p>Escolha o serviço, o profissional e o melhor horário para você.</p>
+    <hr>
+
+    <form id="agendamento-form">
+        <div>
+            <label for="servico-select">Escolha o Serviço:</label>
+            <select name="servico" id="servico-select" required>
+                <option value="">Carregando...</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="funcionario-select">Escolha o Profissional:</label>
+            <select name="funcionario" id="funcionario-select" required>
+                <option value="">Carregando...</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="data-hora-input">Escolha a Data e Hora:</label>
+            <input type="datetime-local" id="data-hora-input" required>
+        </div>
+        <br>
+        <button type="submit">Agendar</button>
+    </form>
+
+    <div id="mensagem-status" style="margin-top: 1em;"></div>
+    <hr>
+    <a href="meus-agendamentos.html">Ver meus agendamentos</a>
+
+    <script src="agendamento.js"></script>
+</body>
+</html>
