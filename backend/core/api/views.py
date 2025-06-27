@@ -1,6 +1,6 @@
 from rest_framework import generics
 from rest_framework.generics import ListAPIView
-from rest_framework.permissions import AllowAny # Permite que qualquer um se registre
+from rest_framework.permissions import AllowAny #qualquer um pode se registrar
 from core.models import Servico, User
 from .serializers import (ServicoSerializer, FuncionarioSerializer, UserRegisterSerializer, AgendamentoSerializer,
     AgendamentoCreateSerializer)

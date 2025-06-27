@@ -12,4 +12,7 @@ urlpatterns = [
 
     path('accounts/', include('django.contrib.auth.urls')), # PÁGINAS DE LOGIN/LOGOUT
     path('', include('core.urls')), # Nossa página inicial
+
+    # Ela ativa as rotas de login e logout para a API Navegável
+    path('api/auth/', include('rest_framework.urls'))
 ]

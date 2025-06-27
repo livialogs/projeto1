@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Serviços</title>
+    <title>Bem-vindo(a) - Massoterapia</title>
 </head>
 <body>
+
+    <nav id="navbar" style="padding: 1em; background-color: #f0f0f0; margin-bottom: 1em;">
+        </nav>
+
     <h1>Nossos Serviços</h1>
     <ul id="lista-servicos">
         <li>Carregando serviços...</li>
     </ul>
+
     <script src="script.js"></script>
+
+    <script>
+        // Pega o elemento da barra de navegação
+        const navBar = document.getElementById('navbar');
+        // Pega o token do armazenamento local
+        const accessToken = localStorage.getItem('accessToken');
+
+        // Função de logout (a mesma que vimos acima)
+        function fazerLogout() {
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+            alert('Você saiu com sucesso!');
+            window.location.reload(); // Recarrega a página para atualizar a barra de navegação
+        }
+
+        // Se o token existir (usuário está logado)
+        if (accessToken) {
+            navBar.innerHTML = `
+                <a href="meus-agendamentos.html">Meus Agendamentos</a> | 
+                <a href="agendamento.html">Fazer Novo Agendamento</a> | 
+                <a href="#" onclick="fazerLogout()">Sair (Logout)</a>
+            `;
+        } else { // Se não houver token (usuário deslogado)
+            navBar.innerHTML = `
+                <a href="login.html">Fazer Login</a>
+            `;
+        }
+    </script>
+
 </body>
 </html>

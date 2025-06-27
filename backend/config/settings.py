@@ -144,8 +144,14 @@ CORS_ALLOWED_ORIGINS = [
 
 # Configurações do Django REST Framework
 REST_FRAMEWORK = {
-    # Define as classes de autenticação padrão pra todas as Views da API
     'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        # Nova esta linha para a API Navegável funcionar corretamente, está dizendo ao DRF: "Sua principal forma de autenticação para a API é JWT, mas também entenda a autenticação por sessão do Django (com cookies)". Isso "religa" a funcionalidade de login/logout da interface da API Navegável.
+        'rest_framework.authentication.SessionAuthentication',
+        
+        # A principal forma de autenticação continua sendo JWT
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+
+
+    )
 }
